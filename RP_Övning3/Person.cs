@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RP_Övning3
+﻿namespace RP_Övning3
 {
     internal class Person
     {
@@ -40,7 +34,8 @@ namespace RP_Övning3
                 if (value.Length < 3)
                 {
                     throw new ArgumentException("Persons last name must be longer than 2 character.");
-                }else if(value.Length > 15)
+                }
+                else if (value.Length > 15)
                 {
                     throw new ArgumentException("Persons last name must be shorter than 16 character.");
                 }
@@ -48,7 +43,8 @@ namespace RP_Övning3
             }
         }
         public int age;
-        public int Age {
+        public int Age
+        {
             get
             {
                 return age;

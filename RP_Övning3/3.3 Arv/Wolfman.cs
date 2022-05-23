@@ -1,30 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RP_Övning3._3._3_Arv
+﻿namespace RP_Övning3._3._3_Arv
 {
     internal class Wolfman : Wolf, Iperson
     {
-        public Wolfman(string name, int age, int weight, string size, int pacSize) : base(name, age, weight, size, pacSize)
+        public bool IsCursed { get; set; }
+        public Wolfman(string name, int age, int weight, string size, int pacSize, bool isCursed) : base(name, age, weight, size, pacSize)
         {
-            this.pacSize = pacSize;
-            this.Name = name;
-            this.Age = age;
-            this.Weight = weight;
-            this.Size = size;
+            IsCursed = isCursed;
         }
 
         public string Talk()
         {
-            return "Hello world";
+            return "Hello world, I'm Wolfman!";
         }
 
-        string Iperson.Stats()
+        string Stats()
         {
-            string ret = "Age:" + this.Age + " Weight:" + this.Weight + " Size:" + this.Size + " Name:" + this.Name, Age, Weight, Size, name;
+            //string ret = "Age:" + this.Age + " Weight:" + this.Weight + " Size:" + this.Size + " Name:" + this.Name, Age, Weight, Size, name;
+            string ret = base.Stats() + $"Is Cursed: {IsCursed}.";
             return ret;
         }
     }

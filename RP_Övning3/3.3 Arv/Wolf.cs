@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RP_Övning3._3._3_Arv
+﻿namespace RP_Övning3._3._3_Arv
 {
     internal class Wolf : Animal
     {
@@ -25,7 +19,8 @@ namespace RP_Övning3._3._3_Arv
 
         public override string Stats()
         {
-            string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Size of its pac:" + this.pacSize + " Name:" + this.Name, Age, Weight, Size, pacSize, name;
+            //string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Size of its pac:" + this.pacSize + " Name:" + this.Name, Age, Weight, Size, pacSize, name;
+            string ret = base.Stats() + $"Pack Size: {pacSize}, ";
             return ret;
         }
     }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RP_Övning3._3._3_Arv
+﻿namespace RP_Övning3._3._3_Arv
 {
-    internal class Horse : Animal
+    internal class Horse : Animal, Iperson
     {
-        public bool isrideble;
+        public bool Isrideble { get; set; }
         public override string DoSound()
         {
             return "Neigh";
@@ -16,16 +10,19 @@ namespace RP_Övning3._3._3_Arv
 
         public Horse(string name, int age, int weight, string size, bool isrideble) : base(name, age, weight, size)
         {
-            this.isrideble = isrideble;
-            this.Name = name;
-            this.Age = age;
-            this.Weight = weight;
-            this.Size = size;
+            Isrideble = isrideble;
+
         }
         public override string Stats()
         {
-            string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Is it rideble:" + this.isrideble + " Name:" + this.Name, Age, Weight, Size, isrideble, name;
+            //string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Is it rideble:" + this.isrideble + " Name:" + this.Name, Age, Weight, Size, isrideble, name;
+            string ret = base.Stats() + $"Ridable: {Isrideble}.";
             return ret;
+        }
+
+        public string Talk()
+        {
+            return $"I am a Centaur!";
         }
     }
 }

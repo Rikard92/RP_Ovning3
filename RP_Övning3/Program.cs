@@ -1,5 +1,4 @@
 ﻿using RP_Övning3._3._3_Arv;
-using System;
 
 namespace RP_Övning3
 {
@@ -28,12 +27,12 @@ namespace RP_Övning3
 
             foreach (UserError error in UEL)
             {
-                Console.WriteLine(error.UEMessage()); 
+                Console.WriteLine(error.UEMessage());
             }
             Console.WriteLine();
             List<Animal> Animals = new List<Animal>();
-            Animals.Add(new Wolfman("Herald", 25, 40, "Large", 1));
-            Animals.Add(new Dog("Oskar",5,5,"Small", 3));
+            Animals.Add(new Wolfman("Herald", 25, 40, "Large", 1, true));
+            Animals.Add(new Dog("Oskar", 5, 5, "Small", 3));
             Animals.Add(new Worm("Jim", 2, 1, "Tiny", false));
             Animals.Add(new Wolf("Gerard", 6, 6, "Small", 3));
             Animals.Add(new Hedgehog("Sonic", 6, 2, "Tiny", 3));
@@ -43,25 +42,36 @@ namespace RP_Övning3
             Animals.Add(new Pelican("Pel", 14, 3, "Medium", 4, 4));
             Animals.Add(new Horse("Silver", 10, 70, "Large", true));
 
-            
+
 
             foreach (Animal A in Animals)
             {
                 //3.4.13 Listen anropar functionen och skriver ut resultatet. 
-                Iperson I = A as Iperson;
-                Dog D = A as Dog;
-                if (I!=null)
+                //Iperson I = A as Iperson;
+                //Dog D = A as Dog;
+                if (A is Iperson)
                 {
-                    Console.WriteLine("Person: {0} say {1}.", I.Stats(), I.Talk());
-                }else if (D!=null)
+                    Iperson pers = (Iperson)A;
+                    Console.WriteLine(pers.Stats());
+                    Console.WriteLine(pers.DoSound());
+                    Console.WriteLine(pers.Talk());
+
+                }
+                else if (A is Dog)
                 {
-                    Console.WriteLine("Dog: {0} goes {1} and is agood boy that goes {1}.", D.Stats(), D.DoSound(), D.GoodBoySound());
+                    //Console.WriteLine("Dog: {0} goes {1} and is agood boy that goes {1}.", D.Stats(), D.DoSound(), D.GoodBoySound());
+                    Dog dog = (Dog)A;
+                    Console.WriteLine(dog.Stats());
+                    Console.WriteLine(dog.DoSound());
+                    Console.WriteLine(dog.GoodBoySound());
                 }
                 else
                 {
                     Console.WriteLine("Animal: {0} goes {1}.", A.Stats(), A.DoSound());
                 }
-                
+
+
+
             }
             Console.WriteLine("");
             List<Dog> Dogs = new List<Dog>();

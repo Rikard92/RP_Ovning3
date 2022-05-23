@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RP_Övning3
+﻿namespace RP_Övning3
 {
     abstract class Animal
     {
@@ -17,14 +11,15 @@ namespace RP_Övning3
 
         public Animal(string name, int age, int weight, string size)
         {
-            this.Name = name;
-            this.Age = age;
-            this.Weight = weight;
-            this.Size = size;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            Size = size;
         }
         public virtual string Stats()
         {
-            string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Name:" + this.Name , Age, Weight, Size, name;
+            //string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Name:" + this.Name , Age, Weight, Size, name;
+            string ret = $"Age: {Age}, Weight: {Weight}, Size: {Size}, Name: {Name}, ";
             return ret;
         }
 
