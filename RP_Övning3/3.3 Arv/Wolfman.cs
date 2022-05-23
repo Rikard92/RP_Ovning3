@@ -16,7 +16,7 @@
         string Stats()
         {
             //string ret = "Age:" + this.Age + " Weight:" + this.Weight + " Size:" + this.Size + " Name:" + this.Name, Age, Weight, Size, name;
-            string ret = base.Stats() + $"Is Cursed: {IsCursed}.";
+            string ret = base.Stats() + $", Is Cursed: {IsCursed}.";
             return ret;
         }
     }

@@ -16,7 +16,7 @@
         public override string Stats()
         {
             //string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Is it rideble:" + this.isrideble + " Name:" + this.Name, Age, Weight, Size, isrideble, name;
-            string ret = base.Stats() + $"Ridable: {Isrideble}.";
+            string ret = base.Stats() + $", Ridable: {Isrideble}.";
             return ret;
         }
 

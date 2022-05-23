@@ -19,7 +19,7 @@
         public virtual string Stats()
         {
             //string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Name:" + this.Name , Age, Weight, Size, name;
-            string ret = $"Age: {Age}, Weight: {Weight}, Size: {Size}, Name: {Name}, ";
+            string ret = $"Age: {Age}, Weight: {Weight}, Size: {Size}, Name: {Name}";
             return ret;
         }
 

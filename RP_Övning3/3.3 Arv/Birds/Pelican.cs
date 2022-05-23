@@ -17,7 +17,7 @@ namespace RP_Övning3._3._3_Arv
 
         public override string Stats()
         {
-            string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Wingspan:" + this.wingspan + " Bill Volume:" + this.billVolume + " Name:" + this.Name, Age, Weight, Size, wingspan, billVolume, name;
+            string ret = base.Stats() + $", BillVolume: {billVolume}";
             return ret;
         }
     }

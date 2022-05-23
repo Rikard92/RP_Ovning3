@@ -18,15 +18,11 @@ namespace RP_Övning3._3._3_Arv
         public Bird(string name, int age, int weight, string size, double wingspan) : base( name, age, weight, size)
         {
             this.wingspan = wingspan;
-            this.Name = name;
-            this.Age = age;
-            this.Weight = weight;
-            this.Size = size;
         }
 
         public override string Stats()
         {
-            string ret = "Age:"+this.Age+" Weight:"+this.Weight+" Size:"+this.Size+ " Wingspan:" + this.wingspan + " Name:" + this.Name, Age, Weight, Size, wingspan, name;
+            string ret = base.Stats() + $", Wingspan: {wingspan}";
             return ret;
         }
     }
