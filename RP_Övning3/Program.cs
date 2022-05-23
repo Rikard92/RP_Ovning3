@@ -7,20 +7,12 @@ namespace RP_Övning3
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Person person1 = new Person();
-                person1.age = 15;
-                person1.height = 160;
-                person1.weight = 50;
-                person1.lName = "Jonas";
-                person1.fName = "Oster";
-            }
-            catch
-            {
-
-            }
-            
+            Person person1 = new Person();
+            person1.age = 15;
+            person1.height = 160;
+            person1.weight = 50;
+            person1.lName = "Jonas";
+            person1.fName = "Oster";
 
             PersonHandler PH = new PersonHandler();
 
@@ -57,9 +49,13 @@ namespace RP_Övning3
             {
                 //3.4.13 Listen anropar functionen och skriver ut resultatet. 
                 Iperson I = A as Iperson;
+                Dog D = A as Dog;
                 if (I!=null)
                 {
                     Console.WriteLine("Person: {0} say {1}.", I.Stats(), I.Talk());
+                }else if (D!=null)
+                {
+                    Console.WriteLine("Dog: {0} goes {1} and is agood boy that goes {1}.", D.Stats(), D.DoSound(), D.GoodBoySound());
                 }
                 else
                 {
@@ -67,9 +63,26 @@ namespace RP_Övning3
                 }
                 
             }
+            Console.WriteLine("");
+            List<Dog> Dogs = new List<Dog>();
+            Dogs.Add(new Dog("Oskar", 5, 5, "Small", 3));
+            Dogs.Add(new Dog("Fido", 6, 14, "Medium", 2));
+            Dogs.Add(new Dog("Boss", 6, 9, "Small", 4));
+            Dogs.Add(new Dog("Pluto", 3, 15, "Medium", 5));
+            Dogs.Add(new Dog("Oswall", 8, 18, "Medium", 8));
+            //Dogs.Add(new Horse("Oswall", 8, 18, "Medium", true));
 
             //3.4.9 Det går inte att lägga till En häst i en hundlista eftersom Listan har besignerat att den ska bara ta emot object som är av type Hund
             //3.4.10 Listen måste designera att den sak ta emot Animals, så som listan "Animals" 
+            //3.4.17 För att metoden finns bara in Dog classen, den ärver från Animals classen men metoden inte finns i Animals classen. 
+
+            foreach (Dog D in Dogs)
+            {
+
+                Console.WriteLine("Dog: {0} goes {1} and is agood boy that goes {2}.", D.Stats(), D.DoSound(), D.GoodBoySound());
+
+
+            }
 
             string s = Console.ReadLine();
         }

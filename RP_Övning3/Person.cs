@@ -8,7 +8,8 @@ namespace RP_Övning3
 {
     internal class Person
     {
-        public string fName
+        public string fName;
+        public string FName
         {
             get
             {
@@ -27,7 +28,8 @@ namespace RP_Övning3
                 fName = value;
             }
         }
-        public string lName
+        public string lName;
+        public string LName
         {
             get
             {
@@ -45,7 +47,8 @@ namespace RP_Övning3
                 lName = value;
             }
         }
-        public int age {
+        public int age;
+        public int Age {
             get
             {
                 return age;

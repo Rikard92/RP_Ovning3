@@ -14,6 +14,11 @@ namespace RP_Övning3._3._3_Arv
             return "Bork";
         }
 
+        public string GoodBoySound()
+        {
+            return "Bof";
+        }
+
         public Dog(string name, int age, int weight, string size, int triksKnown) : base(name, age, weight, size)
         {
             this.triksKnown = triksKnown;
